@@ -5,12 +5,11 @@ pipeline{
     stages{
         stage("run ping module"){
             
-            stage{ 
-                steps{
+         steps{
                     sh 'ansible -m ping'
                 }                
             }
             }
-            }
+            
 }
             
