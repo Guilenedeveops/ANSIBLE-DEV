@@ -1,15 +1,13 @@
 pipeline{
     agent{
-        label "ansible-agent"
+        label 'ansible-agent'
     }
     stages{
-        stage("run ping module"){
-            
-         steps{
-                    sh 'ansible -m ping'
-                }                
+        stage('run ping'){
+            steps{
+                sh 'ansible all -m ping'
             }
-            }
-            
+        }
+    }
 }
-            
+      
