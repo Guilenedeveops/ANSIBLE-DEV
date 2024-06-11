@@ -1,0 +1,12 @@
+---
+- name: show ouput
+  hosts: ws 
+  become: yes
+
+  tasks:
+    - name: show what i am doing
+      command: whoami
+      register: value
+    - name: display the result
+      debug: 
+        var: value

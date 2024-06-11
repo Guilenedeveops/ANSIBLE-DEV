@@ -1,0 +1,7 @@
+---
+- name: use httpd-role
+  hosts: ws
+  become: yes
+  roles: 
+    - role: httpd-role
+      sysadmin: angela@linuxhandbook.com

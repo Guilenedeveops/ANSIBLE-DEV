@@ -1,0 +1,20 @@
+---
+- name:
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: handler example
+      group:
+        name: engeneers
+      notify: add elliot
+    - name: second tasks
+      debug: 
+        msg: "i am just anothet tasks."
+  handlers: 
+    - name: add elliot
+      user:
+        name: elliot
+        group: engineers
+        append: yes
+   

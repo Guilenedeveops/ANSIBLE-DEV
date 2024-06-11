@@ -1,0 +1,15 @@
+---
+- name: working with variables
+  hosts: ws
+  vars_files: myvars.yml
+
+  tasks:
+    - name: show first item in port_nums
+      debug:
+        msg: port for jfrog is {{port_nums[0]}}
+    - name: show fav_subject
+      debug:
+        msg: my favorite fav_subject is {{fav_subject}}
+    - name: lisa uid
+      debug:
+        msg: lisa uid is {{users.lisa.uid}}

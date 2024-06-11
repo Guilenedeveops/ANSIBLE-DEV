@@ -1,0 +1,26 @@
+---
+- name: first play
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Install tmux
+      package:
+        name: tmux
+        state: present
+    - name: create an archive
+      archive: 
+        path: /var/log
+        dest: /tmp/logs.tar.gz
+        format: gz
+
+- name: second play
+  hosts: [ws]
+  become: yes
+  tasks:
+    - name: Install git
+      yum: 
+        name: git
+        state: present
+
+      

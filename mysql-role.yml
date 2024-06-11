@@ -1,0 +1,8 @@
+---
+- name: applying geerlingguy.mysql role
+  become: yes
+  hosts: db
+  roles: 
+    - geerlingguy.haproxyls
+    - jenkins_role
+    - nginx_role

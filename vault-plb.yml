@@ -1,0 +1,15 @@
+---
+- name:
+  hosts: db
+  vars_files: 
+    - web-secret.yml
+    - db-secrets.yml
+
+  tasks:
+    - name: show secret1 value
+      debug:
+        msg: "{{secret1}}"
+    - name: show secret2 value
+      debug:
+        msg: "{{secret2}}"
+

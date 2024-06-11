@@ -1,0 +1,20 @@
+---
+- name: download tomcat
+  hosts: all
+  become: yes
+
+  tasks: 
+  - name: create a directory
+    file:
+        path: /opt/tomcat
+        state: directory
+        mode: '0755'
+  # - name: install tomcat
+  #   get_url: 
+  #       url: https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.24/bin/apache-tomcat-10.1.24.tar.gz
+  #       dest: /opt/tomcat
+  #       mode: '0755'
+  - name: uninstall tomcat
+    file:
+        path: /opt/tomcat
+        state: absent
