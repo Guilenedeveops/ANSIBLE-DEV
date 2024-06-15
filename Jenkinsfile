@@ -26,6 +26,19 @@ pipeline{
                                             verbose: false)])
             }
         }
+        stage('send files to jefrog'){
+            steps{
+                sh ''' 
+                    zip zipfile.zip *
+                    curl -uadmin:AP7bxAPKkWrSXTi9tv2SeCxA3Wn \
+                    -T ansiblefiles.zip \
+                     "http://3.90.82.145:8081/artifactory/ymlfile160624/ymlfile160624" 
+                     '''
+                     
+            }
+        }
+
+        
     }
 }
       
