@@ -29,11 +29,11 @@ pipeline{
         stage('send files to jefrog'){
             steps{
                 sh ''' 
-                    zip zipfile.zip *
+                    zip file160624.zip *
                     curl -uadmin:AP7bxAPKkWrSXTi9tv2SeCxA3Wn \
                     -T ansiblefiles.zip \
-                     "http://3.90.82.145:8081/artifactory/ymlfile160624/ymlfile160624" 
-                     '''
+                    "http://3.90.82.145:8081/artifactory/ymlfile160624/ymlfile160624/" 
+                    '''
                      
             }
         }
