@@ -9,7 +9,7 @@ pipeline{
     stages{
         stage('run a cron every month'){
             steps{
-                dir('/home/ec2-user/ansible-jenkins-training/cronjob'){
+                dir('/home/ec2-user/ansible-dev/cronjob'){
                     sh 'ansible-playbook cronplay.yml'
                 }
             }
